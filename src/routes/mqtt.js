@@ -1,7 +1,11 @@
 import { io } from 'socket.io-client'
 
-// Connect to backend Socket.IO (assumes backend runs on same host:3001 in dev)
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:3001'
+// Connect to backend Socket.IO.
+// Prefer VITE_SERVER_URL (baked at build time). If not provided, fall back to the
+// runtime page origin so the frontend served by the same server connects back to it
+// (this avoids needing to rebuild with VITE_SERVER_URL when deploying the single Docker image).
+const runtimeOrigin = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : undefined
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || runtimeOrigin || 'http://localhost:3001'
 const socket = io(SERVER_URL)
 
 const listeners = {
