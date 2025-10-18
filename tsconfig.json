@@ -6,6 +6,13 @@
     }
   },
   "files": [],
+  "exclude": [
+    "**/.dockerignore",
+    "Dockerfile",
+    ".dockerignore",
+    "micropython/**",
+    "RENDER_DEPLOY.md"
+  ],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
