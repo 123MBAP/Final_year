@@ -183,7 +183,12 @@ export default function Dashboard() {
                     title="Toggle direction"
                     className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-gray-700 hover:bg-gray-600 active:scale-95 rounded-lg text-white text-lg transition-transform shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
                   >
-                    
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M21 12a9 9 0 10-3.03 6.364" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M21 12h-4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3 12a9 9 0 103.03-6.364" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3 12h4v-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </button>
                 </div>
               </div>
