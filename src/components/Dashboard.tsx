@@ -123,14 +123,14 @@ export default function Dashboard() {
           {/* Weight Display */}
           <div className="xs:col-span-1 lg:col-span-4 bg-gray-800 rounded-xl p-3 sm:p-4 flex flex-col justify-center">
             <div className="text-center">
-              <div className="text-xs sm:text-sm text-gray-400 mb-1">Current Weight</div>
+              {/* <div className="text-xs sm:text-sm text-gray-400 mb-1">Current Weight</div>
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 {weight !== null ? weight.toFixed(1) : '--'}
                 <span className="text-sm sm:text-lg text-gray-400 ml-1">kg</span>
-              </div>
+              </div> */}
               <div className="mt-2 text-center">
-                <div className="text-xs text-gray-400">Distance</div>
-                <div className="text-lg font-medium text-white">{distance !== null ? (Number.isNaN(distance) ? '--' : distance.toFixed(1)) : '--'} <span className="text-sm text-gray-400">cm</span></div>
+                <div className="text-4xl font-semibold text-gray-400">Distance</div>
+                <div className="text-7xl font-bold text-white">{distance !== null ? (Number.isNaN(distance) ? '--' : distance.toFixed(1)) : '--'} <span className="text-2xl text-gray-400">cm</span></div>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function Dashboard() {
                     title="Toggle direction"
                     className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-gray-700 hover:bg-gray-600 active:scale-95 rounded-lg text-white text-lg transition-transform shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
                   >
-                    ↺
+                    
                   </button>
                 </div>
               </div>
