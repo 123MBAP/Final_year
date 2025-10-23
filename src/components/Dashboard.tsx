@@ -7,7 +7,6 @@ type Status = 'idle' | 'running' | 'stopped' | 'emergency'
 
 export default function Dashboard() {
   const [connected, setConnected] = useState(false)
-  const [weight, setWeight] = useState<number | null>(null)
   const [distance, setDistance] = useState<number | null>(null)
   const [status, setStatus] = useState<Status>('idle')
   const [rpm, setRpm] = useState<number>(300)
@@ -20,10 +19,7 @@ export default function Dashboard() {
     const unsub = onMqtt((data: { topic: string; message: string }) => {
       const topic = String(data.topic || '')
       const payload = String(data.message || '')
-      if (topic.endsWith('/weight') || topic === 'machine/weight') {
-        const n = Number(payload)
-        if (!Number.isNaN(n)) setWeight(n)
-      } else if (topic.endsWith('/status') || topic === 'machine/status') {
+      if (topic.endsWith('/status') || topic === 'machine/status') {
         const sRaw = payload.toLowerCase()
         let s: Status = 'idle'
         if (sRaw.indexOf('run') !== -1) s = 'running'
